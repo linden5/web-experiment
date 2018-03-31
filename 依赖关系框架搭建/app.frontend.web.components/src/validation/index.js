@@ -5,8 +5,6 @@
 import { validation } from '@gfloan/app.frontend.web.utils'
 import a from '@gfloan/app.frontend.web.utils'
 
-console.log(validation)
-console.log(a)
 /**
     @function isEmailValid 检测email是否是合法的
     @param {String} email email地址字符串
