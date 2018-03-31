@@ -1,0 +1,7 @@
+/build/
+/config/
+/mock/
+/dist/
+/*.js
+/test/unit/coverage/
+/test/unit/jest.conf.js

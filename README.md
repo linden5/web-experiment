@@ -1,0 +1,9 @@
+# Front End Web Development Experiment Documentation
+
+## 环境搭建
+1.  [私有npm仓库搭建](./私有npm仓库搭建.md)
+2.  全局安装[yarn](https://yarn.org.cn/)
+>   npm i -g yarn
+3.  全局安装安装vue-cli
+>   npm i -g vue-cli
+

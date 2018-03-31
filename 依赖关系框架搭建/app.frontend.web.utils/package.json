@@ -1,0 +1,34 @@
+{
+  "name": "@gfloan/app.frontend.web.utils",
+  "version": "0.0.3",
+  "description": "各个子模块的公用function、class和全局变量",
+  "main": "dist/index.js",
+  "repository": "https://github.com/linden5-WebExperiment/app.frontend.web.utils.git",
+  "author": "liuyunxng",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "rollup -c ./build/rollup.config.js",
+    "unit": "jest --config test/unit/jest.conf.js --coverage",
+    "lint": "eslint --ext .js src test/unit",
+    "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc"
+  },
+  "devDependencies": {
+    "chalk": "^2.0.1",
+    "eslint": "^4.15.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^22.0.4",
+    "jsdoc": "^3.5.5",
+    "rollup": "^0.57.1",
+    "rollup-plugin-uglify": "^3.0.0"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  }
+}
