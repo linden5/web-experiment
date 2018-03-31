@@ -1,6 +1,6 @@
 {
   "name": "@gfloan/app.frontend.web.utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "各个子模块的公用function、class和全局变量",
   "main": "dist/index.js",
   "repository": "https://github.com/linden5-WebExperiment/app.frontend.web.utils.git",
@@ -8,13 +8,14 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "rollup -c ./build/rollup.config.js",
+    "build": "webpack --config ./build/webpack.config.js",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "lint": "eslint --ext .js src test/unit",
-    "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc"
+    "doc": "./node_modules/.bin/jsdoc -c jsdoc.conf.json -r -d doc"
   },
   "devDependencies": {
-    "chalk": "^2.0.1",
+    "babel-jest": "^22.4.3",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
@@ -25,8 +26,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^22.0.4",
     "jsdoc": "^3.5.5",
-    "rollup": "^0.57.1",
-    "rollup-plugin-uglify": "^3.0.0"
+    "webpack": "^4.4.1"
   },
   "publishConfig": {
     "registry": "http://localhost:4873"

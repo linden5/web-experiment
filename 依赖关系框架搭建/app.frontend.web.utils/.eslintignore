@@ -1,6 +1,4 @@
 /build/
-/config/
-/mock/
 /dist/
 /*.js
 /test/unit/coverage/

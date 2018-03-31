@@ -1,22 +1,23 @@
 {
-  "name": "@gfloan/app.frontend.web.scaffold",
-  "version": "1.0.1",
-  "description": "A scaffold project based on vue-cli webpack template",
+  "name": "@gfloan/app.frontend.web.router",
+  "version": "0.0.3",
+  "description": "路由定义",
   "author": "liuyunxiang <liuyunxng@qq.com>",
-  "private": true,
+  "main": "dist/index.js",
+  "private": false,
   "scripts": {
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
-    "build:js": "rollup -c ./build/rollup.config.js",
+    "build": "rollup -c ./build/rollup.config.js",
     "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc"
   },
   "publishConfig": {
     "registry": "http://localhost:4873"
   },
   "dependencies": {
-    "@gfloan/app.frontend.web.core": "^0.0.1",
-    "@gfloan/app.frontend.web.utils": "^0.0.3"
+    "@gfloan/app.frontend.web.components": "^0.0.1",
+    "@gfloan/app.frontend.web.core": "^0.0.1"
   },
   "devDependencies": {
     "chalk": "^2.0.1",

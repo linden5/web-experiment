@@ -1,0 +1,16 @@
+{
+  "name": "web-project",
+  "version": "0.0.1",
+  "description": "依赖关系框架搭建",
+  "main": "index.js",
+  "author": "liuyunxiang",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "gen": "gulp generate -d"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "minimist": "^1.2.0"
+  }
+}

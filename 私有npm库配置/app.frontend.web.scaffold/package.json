@@ -13,7 +13,8 @@
     "lint": "eslint --ext .js,.vue src test/unit",
     "build:js": "rollup -c ./build/rollup.config.js",
     "build:vue": "node build/build.js",
-    "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc"
+    "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc",
+    "upgrade": "ncu -u && npm install"
   },
   "publishConfig": {
     "registry": "http://localhost:4873"
