@@ -17,10 +17,10 @@
   },
   "dependencies": {
     "@gfloan/app.frontend.web.components": "^0.0.3",
-    "@gfloan/app.frontend.web.core": "^0.0.1"
+    "@gfloan/app.frontend.web.core": "^0.0.1",
+    "babel-jest": "^22.4.3"
   },
   "devDependencies": {
-    "babel-jest": "^22.4.3",
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^11.0.0",

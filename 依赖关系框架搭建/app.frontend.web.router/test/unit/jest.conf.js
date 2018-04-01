@@ -12,7 +12,6 @@ module.exports = {
   transform: {
     '^.+\\.js$': '<rootDir>/node_modules/babel-jest'
   },
-  setupFiles: ['<rootDir>/test/unit/setup'],
 
   coverageDirectory: '<rootDir>/test/unit/coverage',
   collectCoverageFrom: [

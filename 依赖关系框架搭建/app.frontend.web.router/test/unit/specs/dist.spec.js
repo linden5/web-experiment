@@ -1,8 +1,4 @@
-import VueRouter from 'vue-router'
 import router from '@/../dist/index.js'
+import { test } from './index.spec'
 
-describe('Package bundle test', () => {
-    it('exports should be an instance of VueRouter', () => {
-        expect(router instanceof VueRouter).toEqual(true)
-    })
-})
+test(router)

@@ -7,6 +7,6 @@ var path = argv.d
 
 
 gulp.task('generate', () =>{
-    gulp.src([TEMPLATE_PATH + '/**', '!' + TEMPLATE_PATH + '/node_modules/**'])
+    gulp.src([TEMPLATE_PATH + '/**/*', '!' + TEMPLATE_PATH + '/node_modules/**'])
         .pipe(gulp.dest(path))
 })
