@@ -1,8 +1,6 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import { App, HelloWorld } from '@gfloan/app.frontend.web.components'
+import { HelloWorld } from '@gfloan/app.frontend.web.module.home'
 
-export default new Router({
+export default {
   routes: [
     {
       path: '/',
@@ -10,4 +8,4 @@ export default new Router({
       component: HelloWorld
     }
   ]
-})
+}

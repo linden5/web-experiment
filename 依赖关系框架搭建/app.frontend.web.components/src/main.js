@@ -1,8 +1,6 @@
-import HelloWorld from '@/components/HelloWorld'
 import App from '@/App'
 
 const components = [
-  HelloWorld,
   App
 ]
 
@@ -13,7 +11,6 @@ const install = Vue => {
 }
 
 export {
-  HelloWorld,
   App
 }
 
