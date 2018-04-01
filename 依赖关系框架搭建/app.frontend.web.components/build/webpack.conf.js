@@ -24,10 +24,10 @@ module.exports = {
     index: './src/main.js'
   },
   output: {
-    path: config.build.assetsRoot,
-    filename: '[name].js'
+    libraryTarget: "umd",
+    filename: "index.js"
   },
-  target: 'node',
+  mode: 'production',
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {

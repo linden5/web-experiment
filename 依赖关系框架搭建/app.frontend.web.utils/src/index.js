@@ -1,3 +1,9 @@
-import * as valid from './validation/index.js'
+import * as validation from './validation/index.js'
 
-export const validation = valid
+export {
+    validation
+}
+
+export default {
+    validation
+}

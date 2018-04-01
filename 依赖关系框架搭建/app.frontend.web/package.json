@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@gfloan/app.frontend.web.core": "^0.0.1",
-    "@gfloan/app.frontend.web.router": "^0.0.4",
+    "@gfloan/app.frontend.web.router": "^0.0.5",
     "@gfloan/app.frontend.web.utils": "^0.0.4"
   },
   "devDependencies": {
