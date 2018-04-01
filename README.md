@@ -7,4 +7,6 @@
 3.  全局安装webpack-cli
 >   npm i -g webpack-cli
 4.  全局安装gulp-cli
->   npm i -g gulp-cli
+>   npm i -g gulp-
+5.  设置git别名命令
+>   git config --global alias.cmp '!f() { git add -A && git commit -m "$@" && git push; }; f'
