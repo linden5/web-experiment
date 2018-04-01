@@ -1,6 +1,6 @@
 {
   "name": "@gfloan/app.frontend.web.module.home",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "首页模块",
   "author": "liuyunxiang <liuyunxng@qq.com>",
   "main": "dist/index.js",
@@ -12,7 +12,8 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "webpack --config ./build/webpack.conf.js",
-    "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc"
+    "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc",
+    "republish": "yarn && yarn build && yarn publish"
   },
   "publishConfig": {
     "registry": "http://localhost:4873"
