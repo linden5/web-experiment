@@ -1,6 +1,6 @@
 {
   "name": "@gfloan/app.frontend.web.module.home",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "首页模块",
   "author": "liuyunxiang <liuyunxng@qq.com>",
   "main": "dist/index.js",
@@ -18,9 +18,9 @@
     "registry": "http://localhost:4873"
   },
   "dependencies": {
+    "@gfloan/app.frontend.web.components": "^0.0.3",
     "@gfloan/app.frontend.web.core": "^0.0.1",
-    "@gfloan/app.frontend.web.utils": "^0.0.5",
-    "@gfloan/app.frontend.web.components": "^0.0.3"
+    "@gfloan/app.frontend.web.utils": "^0.0.5"
   },
   "devDependencies": {
     "autoprefixer": "^8.2.0",
