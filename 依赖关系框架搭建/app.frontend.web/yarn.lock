@@ -78,11 +78,12 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@gfloan/app.frontend.web.components@^0.0.3":
-  version "0.0.3"
-  resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.components/-/app.frontend.web.components-0.0.3.tgz#297bd2d89c841c28f781bbeb014b8299dade7ad9"
+"@gfloan/app.frontend.web.components@^0.0.4":
+  version "0.0.4"
+  resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.components/-/app.frontend.web.components-0.0.4.tgz#b316af0915cd4c4cfcda222a319afc089ee689da"
   dependencies:
     "@gfloan/app.frontend.web.core" "^0.0.1"
+    "@gfloan/app.frontend.web.resource" "^0.0.3"
     "@gfloan/app.frontend.web.utils" "^0.0.5"
 
 "@gfloan/app.frontend.web.core@^0.0.1":
@@ -105,20 +106,24 @@
     vue-router "^3.0.1"
     vuex "^3.0.1"
 
-"@gfloan/app.frontend.web.module.home@^0.0.3":
-  version "0.0.3"
-  resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.module.home/-/app.frontend.web.module.home-0.0.3.tgz#c907ed63504b9b6df87495ab892131eb7ac1555d"
+"@gfloan/app.frontend.web.module.home@^0.0.6":
+  version "0.0.6"
+  resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.module.home/-/app.frontend.web.module.home-0.0.6.tgz#c8df41bdc8ef9a1b1329340886c67c1c7ca859f9"
   dependencies:
-    "@gfloan/app.frontend.web.components" "^0.0.3"
+    "@gfloan/app.frontend.web.components" "^0.0.4"
     "@gfloan/app.frontend.web.core" "^0.0.1"
     "@gfloan/app.frontend.web.utils" "^0.0.5"
 
-"@gfloan/app.frontend.web.router@^0.0.9":
-  version "0.0.9"
-  resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.router/-/app.frontend.web.router-0.0.9.tgz#631b6bb87a9cb028d7a16c87ea6dfb9739859f33"
+"@gfloan/app.frontend.web.resource@^0.0.3":
+  version "0.0.3"
+  resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.resource/-/app.frontend.web.resource-0.0.3.tgz#da2b260a3224a6633a3d73ff5febfb4bd34ee554"
+
+"@gfloan/app.frontend.web.router@^0.0.12":
+  version "0.0.12"
+  resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.router/-/app.frontend.web.router-0.0.12.tgz#b490ca78d5fa20589f3fe69ec8982e99b0f0c4a1"
   dependencies:
     "@gfloan/app.frontend.web.core" "^0.0.1"
-    "@gfloan/app.frontend.web.module.home" "^0.0.3"
+    "@gfloan/app.frontend.web.module.home" "^0.0.6"
 
 "@gfloan/app.frontend.web.utils@^0.0.5":
   version "0.0.5"

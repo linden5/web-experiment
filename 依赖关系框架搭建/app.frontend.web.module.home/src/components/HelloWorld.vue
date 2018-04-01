@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <logo/>
     <h1>{{msg}}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -84,8 +85,13 @@
 </template>
 
 <script>
+import { Logo } from '@gfloan/app.frontend.web.components'
+console.log(Logo)
 export default {
   name: 'HelloWorld',
+  components: {
+    Logo
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

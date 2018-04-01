@@ -6,8 +6,10 @@ export function helloWorldTest(HelloWorld) {
     it('should render correct contents', () => {
       const Constructor = Vue.extend(HelloWorld)
       const vm = new Constructor().$mount()
-      expect(vm.$el.querySelector('.hello h1').textContent)
+      const el = vm.$el
+      expect(el.querySelector('.hello h1').textContent)
         .toEqual('Welcome to Your Vue.js App')
+      expect(el.querySelector('img').getAttribute('alt')).toEqual('logo')
     })
   })
 }

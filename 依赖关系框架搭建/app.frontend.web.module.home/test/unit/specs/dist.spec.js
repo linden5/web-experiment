@@ -1,4 +1,4 @@
-import { App, HelloWorld } from '@/../dist/index'
+import { HelloWorld } from '@/../dist/index'
 import { helloWorldTest } from './HelloWorld.spec'
 import Vue from 'vue'
 

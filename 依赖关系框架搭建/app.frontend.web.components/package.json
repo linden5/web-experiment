@@ -1,6 +1,6 @@
 {
   "name": "@gfloan/app.frontend.web.components",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "公共组件",
   "author": "liuyunxiang <liuyunxng@qq.com>",
   "main": "dist/index.js",
@@ -12,13 +12,15 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "webpack --config ./build/webpack.conf.js",
-    "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc"
+    "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc",
+    "republish": "yarn && yarn build && yarn publish"
   },
   "publishConfig": {
     "registry": "http://localhost:4873"
   },
   "dependencies": {
     "@gfloan/app.frontend.web.core": "^0.0.1",
+    "@gfloan/app.frontend.web.resource": "^0.0.3",
     "@gfloan/app.frontend.web.utils": "^0.0.5"
   },
   "devDependencies": {
@@ -63,8 +65,6 @@
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
     "rimraf": "^2.6.0",
-    "rollup": "^0.57.1",
-    "rollup-plugin-uglify": "^3.0.0",
     "semver": "^5.3.0",
     "shelljs": "^0.8.1",
     "uglifyjs-webpack-plugin": "^1.1.1",

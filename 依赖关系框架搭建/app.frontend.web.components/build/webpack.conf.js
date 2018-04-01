@@ -27,7 +27,6 @@ module.exports = {
     libraryTarget: "umd",
     filename: "index.js"
   },
-  mode: 'production',
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {

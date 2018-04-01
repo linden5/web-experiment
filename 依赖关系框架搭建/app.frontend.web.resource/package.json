@@ -1,48 +1,13 @@
 {
-  "name": "@gfloan/app.frontend.web.components",
+  "name": "@gfloan/app.frontend.web.resource",
   "version": "0.0.3",
-  "description": "公共组件",
+  "description": "公共资源，图片，样式等",
   "author": "liuyunxiang <liuyunxng@qq.com>",
-  "main": "dist/index.js",
   "private": false,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
-    "unit": "jest --config test/unit/jest.conf.js --coverage",
-    "test": "npm run unit",
-    "lint": "eslint --ext .js,.vue src test/unit",
-    "build": "webpack --config ./build/webpack.conf.js",
-    "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc"
+
   },
   "publishConfig": {
     "registry": "http://localhost:4873"
-  },
-  "devDependencies": {
-    "autoprefixer": "^8.2.0",
-    "copy-webpack-plugin": "^4.5.1",
-    "css-loader": "^0.28.0",
-    "extract-text-webpack-plugin": "^3.0.0",
-    "file-loader": "^1.1.4",
-    "friendly-errors-webpack-plugin": "^1.6.1",
-    "optimize-css-assets-webpack-plugin": "^4.0.0",
-    "postcss-import": "^11.0.0",
-    "postcss-loader": "^2.0.8",
-    "postcss-url": "^7.2.1",
-    "rimraf": "^2.6.0",
-    "sass-loader": "^6.0.7",
-    "semver": "^5.3.0",
-    "shelljs": "^0.8.1",
-    "url-loader": "^1.0.1",
-    "webpack": "^4.4.1",
-    "webpack-cli": "^2.0.13"
-  },
-  "engines": {
-    "node": ">= 6.0.0",
-    "npm": ">= 3.0.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  }
 }

@@ -1,7 +1,7 @@
-import App from '@/App'
+import Logo from '@/components/Logo'
 
 const components = [
-  App
+  Logo
 ]
 
 const install = Vue => {
@@ -11,7 +11,7 @@ const install = Vue => {
 }
 
 export {
-  App
+  Logo
 }
 
 export default {
