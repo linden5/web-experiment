@@ -4,7 +4,7 @@ import router from '@/index'
 export function test(router) {
     describe('Package bundle test', () => {
         it('exports should be an instance of VueRouter', () => {
-            expect(router.apps.length === 0).toEqual(true)
+            expect(router.routes.length > 0).toEqual(true)
         })
     })
 }
