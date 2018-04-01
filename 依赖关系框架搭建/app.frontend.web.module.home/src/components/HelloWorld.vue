@@ -1,15 +1,16 @@
 <template>
   <div class="hello">
     <logo/>
-    <h1>{{msg}}</h1>
-    <h2>Essential Links</h2>
+    <Button>有赞Button</Button>
+    <h1>{{lang.home.msg}}</h1>
+    <h2>{{lang.home.title}}</h2>
     <ul>
       <li>
         <a
           href="https://vuejs.org"
           target="_blank"
         >
-          Core Docs
+          {{lang.home.coreDoc}}
         </a>
       </li>
       <li>
@@ -17,7 +18,7 @@
           href="https://forum.vuejs.org"
           target="_blank"
         >
-          Forum
+          {{lang.home.forum}}
         </a>
       </li>
       <li>
@@ -25,7 +26,7 @@
           href="https://chat.vuejs.org"
           target="_blank"
         >
-          Community Chat
+          {{lang.home.community}}
         </a>
       </li>
       <li>
@@ -33,7 +34,7 @@
           href="https://twitter.com/vuejs"
           target="_blank"
         >
-          Twitter
+          {{lang.home.twitter}}
         </a>
       </li>
       <br>
@@ -42,18 +43,18 @@
           href="http://vuejs-templates.github.io/webpack/"
           target="_blank"
         >
-          Docs for This Template
+          {{lang.home.templateDoc}}
         </a>
       </li>
     </ul>
-    <h2>Ecosystem</h2>
+    <h2>{{lang.home.ecosystem}}</h2>
     <ul>
       <li>
         <a
           href="http://router.vuejs.org/"
           target="_blank"
         >
-          vue-router
+          {{lang.home.vueRouter}}
         </a>
       </li>
       <li>
@@ -61,7 +62,7 @@
           href="http://vuex.vuejs.org/"
           target="_blank"
         >
-          vuex
+          {{lang.home.vuex}}
         </a>
       </li>
       <li>
@@ -69,7 +70,7 @@
           href="http://vue-loader.vuejs.org/"
           target="_blank"
         >
-          vue-loader
+          {{lang.home.vueLoader}}
         </a>
       </li>
       <li>
@@ -77,7 +78,7 @@
           href="https://github.com/vuejs/awesome-vue"
           target="_blank"
         >
-          awesome-vue
+          {{lang.home.awesomeVue}}
         </a>
       </li>
     </ul>
@@ -86,15 +87,17 @@
 
 <script>
 import { Logo } from '@gfloan/app.frontend.web.components'
-console.log(Logo)
+import { Button } from 'vant'
+
 export default {
   name: 'HelloWorld',
   components: {
-    Logo
+    Logo,
+    Button
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      lang: require('../locales/' + process.env.LANG + '.json')
     }
   }
 }

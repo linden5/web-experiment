@@ -11,7 +11,7 @@
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
-    "build": "webpack --config ./build/webpack.conf.js",
+    "build": "webpack --config ./build/webpack.prod.conf.js",
     "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc",
     "republish": "yarn && yarn build && yarn publish"
   },
@@ -75,7 +75,9 @@
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.2",
     "webpack": "^4.4.1",
-    "webpack-cli": "^2.0.13"
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-merge": "^4.1.2"
   },
   "engines": {
     "node": ">= 6.0.0",

@@ -1,3 +1,17 @@
 {
-    "hello": "你好"
+    "hello": "你好",
+    "home": {
+        "msg": "欢迎来到您的Vue.js应用",
+        "title": "必要的链接",
+        "coreDoc": "核心文档",
+        "forum": "论坛",
+        "community": "社区讨论",
+        "twitter": "推特",
+        "templateDoc": "此模板的文档",
+        "ecosystem": "生态环境",
+        "vueRouter": "vue-router",
+        "vuex": "vuex",
+        "vueLoader": "vue-loader",
+        "awesomeVue": "awesome-vue"
+    }
 }
