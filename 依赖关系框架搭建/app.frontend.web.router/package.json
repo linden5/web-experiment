@@ -17,7 +17,7 @@
     "registry": "http://localhost:4873"
   },
   "dependencies": {
-    "@gfloan/app.frontend.web.core": "^0.0.1",
+    "@gfloan/app.frontend.web.common": "^0.0.1",
     "@gfloan/app.frontend.web.module.home": "^0.0.6"
   },
   "devDependencies": {

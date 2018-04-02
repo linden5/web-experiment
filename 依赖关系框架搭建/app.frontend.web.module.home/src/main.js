@@ -1,7 +1,7 @@
-import HelloWorld from '@/components/HelloWorld'
+import Home from '@/components/Home'
 
 const components = [
-  HelloWorld
+  Home
 ]
 
 const install = Vue => {
@@ -11,7 +11,7 @@ const install = Vue => {
 }
 
 export {
-  HelloWorld
+  Home
 }
 
 export default {

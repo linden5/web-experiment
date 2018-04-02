@@ -4,17 +4,17 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App'
 
-import HelloWorld from '@/components/HelloWorld'
+import Home from '@/components/Home'
 
 Vue.use(VueRouter)
 Vue.config.productionTip = false
 
 var router = new VueRouter({
   routes: [
-      {
-        path: '/',
-        name: 'index',
-        component: HelloWorld
+    {
+      path: '/',
+      name: 'index',
+      component: Home
     }
   ]
 })

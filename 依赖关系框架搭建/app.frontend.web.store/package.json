@@ -14,6 +14,7 @@
     "doc": "./node_modules/.bin/jsdoc -c jsdoc.conf.json -r -d doc"
   },
   "devDependencies": {
+    "@gfloan/app.frontend.web.core": "^0.0.1",
     "babel-jest": "^22.4.3",
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.15.0",
