@@ -6,6 +6,7 @@
   "main": "dist/index.js",
   "private": false,
   "scripts": {
+    "watch": "webpack --watch --config build/webpack.prod.conf.js",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
