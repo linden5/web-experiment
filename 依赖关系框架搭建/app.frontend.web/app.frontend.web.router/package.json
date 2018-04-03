@@ -1,6 +1,6 @@
 {
   "name": "@gfloan/app.frontend.web.router",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "路由定义",
   "author": "liuyunxiang <liuyunxng@qq.com>",
   "main": "dist/index.js",
@@ -12,15 +12,15 @@
     "build": "webpack --config ./build/webpack.config.js",
     "pub": "yarn run build && yarn publish",
     "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc",
-    "upgrade": "yarn upgrade --scope @gfloan",
-    "republish": "yarn run upgrade && yarn build && yarn publish"
+    "up": "yarn upgrade --scope @gfloan",
+    "repup": "yarn run up && yarn build && yarn publish"
   },
   "publishConfig": {
     "registry": "http://localhost:4873"
   },
   "dependencies": {
     "@gfloan/app.frontend.web.common": "^0.0.1",
-    "@gfloan/app.frontend.web.module.home": "^0.0.7"
+    "@gfloan/app.frontend.web.module.home": "^0.0.9"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
