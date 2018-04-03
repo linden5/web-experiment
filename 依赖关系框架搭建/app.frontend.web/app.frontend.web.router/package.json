@@ -1,6 +1,6 @@
 {
   "name": "@gfloan/app.frontend.web.router",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "路由定义",
   "author": "liuyunxiang <liuyunxng@qq.com>",
   "main": "dist/index.js",
