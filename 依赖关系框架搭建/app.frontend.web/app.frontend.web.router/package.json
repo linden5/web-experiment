@@ -1,6 +1,6 @@
 {
   "name": "@gfloan/app.frontend.web.router",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "路由定义",
   "author": "liuyunxiang <liuyunxng@qq.com>",
   "main": "dist/index.js",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@gfloan/app.frontend.web.common": "^0.0.1",
-    "@gfloan/app.frontend.web.module.home": "^0.0.1"
+    "@gfloan/app.frontend.web.module.home": "^0.0.7"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
