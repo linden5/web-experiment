@@ -4,6 +4,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import { Button, NavBar, Icon, Toast, Swipe, SwipeItem, Panel, Row, Col, Tabbar, TabbarItem, Tag } from 'vant'
 import Home from '@/components/Home'
+import Entrance from '@/components/Entrance'
 import App from './App'
 
 Vue.use(Button)
@@ -26,6 +27,11 @@ var router = new VueRouter({
       path: '/',
       name: 'index',
       component: Home
+    },
+    {
+      path: '/loading',
+      name: 'loading',
+      component: Entrance
     }
   ]
 })

@@ -1,13 +1,5 @@
 <template>
   <div class="hello">
-    <van-nav-bar
-      title="标题"
-      left-text="返回"
-      right-text="按钮"
-      left-arrow
-      @click-left="onClickLeft"
-      @click-right="onClickRight"
-    />
     <van-swipe :autoplay="3000" class="my-swipe">
       <van-swipe-item class="my-swipe-item">1</van-swipe-item>
       <van-swipe-item class="my-swipe-item">2</van-swipe-item>
@@ -87,22 +79,17 @@
         </van-col>
       </van-row>
     </van-panel>
-
-    <van-tabbar v-model="active">
-      <van-tabbar-item icon="shop">商店</van-tabbar-item>
-      <van-tabbar-item icon="chat" dot>聊天</van-tabbar-item>
-      <van-tabbar-item icon="records" info="5">记录</van-tabbar-item>
-      <van-tabbar-item icon="gold-coin" info="20">金币</van-tabbar-item>
-    </van-tabbar>
   </div>
 </template>
 
 <script>
+import { Toast } from 'vant'
+
 export default {
   name: 'Home',
   data () {
     return {
-      lang: require('../locales/' + process.env.LANG + '.json'),
+      // lang: require('../locales/' + process.env.LANG + '.json'),
       active: 0
     }
   },

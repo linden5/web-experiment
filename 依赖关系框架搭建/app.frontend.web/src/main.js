@@ -6,6 +6,7 @@ import Vuex from 'vuex'
 import { Button, NavBar, Icon, Toast, Swipe, SwipeItem, Panel, Row, Col, Tabbar, TabbarItem, Tag } from 'vant'
 
 import App from './App'
+import Components from '@gfloan/app.frontend.web.components'
 import routes from '@gfloan/app.frontend.web.router'
 import stores from '@gfloan/app.frontend.web.store'
 
@@ -20,6 +21,7 @@ Vue.use(Button)
   .use(Tabbar).use(TabbarItem)
   .use(Tag)
 
+Vue.use(Components)
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)

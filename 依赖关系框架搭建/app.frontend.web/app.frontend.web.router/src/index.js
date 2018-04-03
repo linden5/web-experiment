@@ -1,11 +1,16 @@
-import { Home } from '@gfloan/app.frontend.web.module.home'
+import { Home, Entrance } from '@gfloan/app.frontend.web.module.home'
 
 export default {
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
+      path: '/home',
+      name: 'Home',
       component: Home
+    },
+    {
+      path: '/',
+      name: 'Entrance',
+      component: Entrance
     }
   ]
 }

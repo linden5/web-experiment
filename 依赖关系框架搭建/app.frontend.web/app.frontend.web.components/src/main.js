@@ -1,17 +1,17 @@
-import Logo from '@/components/Logo'
+import HeaderBar from '@/components/HeaderBar'
 
 const components = [
-  Logo
+  HeaderBar
 ]
 
 const install = Vue => {
   components.forEach(Component => {
-    Vue.use(Component)
+    Vue.component(Component.name, Component)
   })
 }
 
 export {
-  Logo
+  HeaderBar
 }
 
 export default {

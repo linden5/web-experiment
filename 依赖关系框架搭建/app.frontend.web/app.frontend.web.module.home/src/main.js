@@ -1,7 +1,9 @@
 import Home from '@/components/Home'
+import Entrance from '@/components/Entrance'
 
 const components = [
-  Home
+  Home,
+  Entrance
 ]
 
 const install = Vue => {
@@ -11,7 +13,8 @@ const install = Vue => {
 }
 
 export {
-  Home
+  Home,
+  Entrance
 }
 
 export default {

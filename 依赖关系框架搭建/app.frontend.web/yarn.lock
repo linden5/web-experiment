@@ -32,6 +32,13 @@
   dependencies:
     "@babel/types" "7.0.0-beta.44"
 
+"@babel/helper-module-imports@^7.0.0-beta.34":
+  version "7.0.0-beta.44"
+  resolved "http://localhost:4873/@babel%2fhelper-module-imports/-/helper-module-imports-7.0.0-beta.44.tgz#60edc68cdf17e13eaca5be813c96127303085133"
+  dependencies:
+    "@babel/types" "7.0.0-beta.44"
+    lodash "^4.2.0"
+
 "@babel/helper-split-export-declaration@7.0.0-beta.44":
   version "7.0.0-beta.44"
   resolved "http://localhost:4873/@babel%2fhelper-split-export-declaration/-/helper-split-export-declaration-7.0.0-beta.44.tgz#c0b351735e0fbcb3822c8ad8db4e583b05ebd9dc"
@@ -82,23 +89,9 @@
   version "0.0.1"
   resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.common/-/app.frontend.web.common-0.0.1.tgz#4ddafaac48d04f9ed153ae0e9585d65a3fc59329"
 
-"@gfloan/app.frontend.web.components@^0.0.4":
-  version "0.0.4"
-  resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.components/-/app.frontend.web.components-0.0.4.tgz#b316af0915cd4c4cfcda222a319afc089ee689da"
-  dependencies:
-    "@gfloan/app.frontend.web.core" "^0.0.1"
-    "@gfloan/app.frontend.web.resource" "^0.0.3"
-    "@gfloan/app.frontend.web.utils" "^0.0.5"
-
-"@gfloan/app.frontend.web.core@^0.0.1":
-  version "0.0.1"
-  resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.core/-/app.frontend.web.core-0.0.1.tgz#3d2106c33b6d9303e4a963507ac9a246181ecc6b"
-  dependencies:
-    axios "^0.18.0"
-    vant "^1.0.3"
-    vue "^2.5.16"
-    vue-router "^3.0.1"
-    vuex "^3.0.1"
+"@gfloan/app.frontend.web.components@^0.0.7":
+  version "0.0.7"
+  resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.components/-/app.frontend.web.components-0.0.7.tgz#7a9bf8d0bd7ea232d2326d07b27d7f340619d518"
 
 "@gfloan/app.frontend.web.core@^0.0.4":
   version "0.0.4"
@@ -110,20 +103,20 @@
     vue-router "^3.0.1"
     vuex "^3.0.1"
 
-"@gfloan/app.frontend.web.module.home@^0.0.7":
-  version "0.0.7"
-  resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.module.home/-/app.frontend.web.module.home-0.0.7.tgz#2e7c7a276e3c9f82e931bffc6b2dae25c0b30e31"
+"@gfloan/app.frontend.web.module.home@^0.0.9":
+  version "0.0.9"
+  resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.module.home/-/app.frontend.web.module.home-0.0.9.tgz#b1fc5af127180a11103be0dc612d25c34997a71e"
 
 "@gfloan/app.frontend.web.resource@^0.0.3":
   version "0.0.3"
   resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.resource/-/app.frontend.web.resource-0.0.3.tgz#da2b260a3224a6633a3d73ff5febfb4bd34ee554"
 
-"@gfloan/app.frontend.web.router@^0.0.16":
-  version "0.0.16"
-  resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.router/-/app.frontend.web.router-0.0.16.tgz#1a0c2a20e4543d2200a5f2913dd153220e72f1d5"
+"@gfloan/app.frontend.web.router@^0.0.18":
+  version "0.0.18"
+  resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.router/-/app.frontend.web.router-0.0.18.tgz#83a0b5635dad57e6707ad19abeb82a6560cfe746"
   dependencies:
     "@gfloan/app.frontend.web.common" "^0.0.1"
-    "@gfloan/app.frontend.web.module.home" "^0.0.7"
+    "@gfloan/app.frontend.web.module.home" "^0.0.9"
 
 "@gfloan/app.frontend.web.store@^0.0.1":
   version "0.0.1"
@@ -132,10 +125,6 @@
 "@gfloan/app.frontend.web.utils@^0.0.4":
   version "0.0.4"
   resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.utils/-/app.frontend.web.utils-0.0.4.tgz#c536d763510788b5cc66abb55a70c85fb5c8e040"
-
-"@gfloan/app.frontend.web.utils@^0.0.5":
-  version "0.0.5"
-  resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.utils/-/app.frontend.web.utils-0.0.5.tgz#43a82af1892187090d7f4d112d7ba1e34ec49588"
 
 "@types/strip-bom@^3.0.0":
   version "3.0.0"
@@ -702,6 +691,12 @@ babel-plugin-dynamic-import-node@^1.2.0:
   resolved "http://localhost:4873/babel-plugin-dynamic-import-node/-/babel-plugin-dynamic-import-node-1.2.0.tgz#f91631e703e0595e47d4beafbb088576c87fbeee"
   dependencies:
     babel-plugin-syntax-dynamic-import "^6.18.0"
+
+babel-plugin-import@^1.6.7:
+  version "1.6.7"
+  resolved "http://localhost:4873/babel-plugin-import/-/babel-plugin-import-1.6.7.tgz#ca8d5ddd321136ea9a7c530870058dba482e42d8"
+  dependencies:
+    "@babel/helper-module-imports" "^7.0.0-beta.34"
 
 babel-plugin-istanbul@^4.0.0, babel-plugin-istanbul@^4.1.5:
   version "4.1.5"

@@ -5,6 +5,8 @@
   "author": "liuyunxiang <827935541@qq.com>",
   "private": false,
   "scripts": {
+    "plink": "gulp link --gulpfile build/gulpfile.js",
+    "gen": "gulp link --gulpfile build/gulpfile.js -d ",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
@@ -19,10 +21,10 @@
     "registry": "http://localhost:4873"
   },
   "dependencies": {
-    "@gfloan/app.frontend.web.components": "^0.0.4",
+    "@gfloan/app.frontend.web.components": "^0.0.7",
     "@gfloan/app.frontend.web.core": "^0.0.4",
     "@gfloan/app.frontend.web.resource": "^0.0.3",
-    "@gfloan/app.frontend.web.router": "^0.0.16",
+    "@gfloan/app.frontend.web.router": "^0.0.18",
     "@gfloan/app.frontend.web.store": "^0.0.1",
     "@gfloan/app.frontend.web.utils": "^0.0.4"
   },
@@ -38,6 +40,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-plugin-transform-vue-jsx": "^3.5.0",
+    "babel-plugin-import": "^1.6.7",
     "babel-preset-env": "^1.3.2",
     "babel-preset-stage-2": "^6.22.0",
     "chalk": "^2.0.1",
