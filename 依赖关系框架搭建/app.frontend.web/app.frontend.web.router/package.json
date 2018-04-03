@@ -1,6 +1,6 @@
 {
   "name": "@gfloan/app.frontend.web.router",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "路由定义",
   "author": "liuyunxiang <liuyunxng@qq.com>",
   "main": "dist/index.js",
@@ -10,6 +10,7 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "webpack --config ./build/webpack.config.js",
+    "pub": "yarn run build && yarn publish",
     "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc",
     "upgrade": "yarn upgrade --scope @gfloan",
     "republish": "yarn run upgrade && yarn build && yarn publish"

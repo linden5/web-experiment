@@ -1,0 +1,34 @@
+{
+  "name": "@gfloan/app.frontend.web.store",
+  "version": "0.0.1",
+  "description": "状态子项目",
+  "main": "dist/index.js",
+  "repository": "https://github.com/linden5-WebExperiment/app.frontend.web.store.git",
+  "author": "liuyunxng",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "webpack --config ./build/webpack.config.js",
+    "unit": "jest --config test/unit/jest.conf.js --coverage",
+    "lint": "eslint --ext .js src test/unit",
+    "doc": "./node_modules/.bin/jsdoc -c jsdoc.conf.json -r -d doc"
+  },
+  "devDependencies": {
+    "@gfloan/app.frontend.web.core": "^0.0.4",
+    "babel-jest": "^22.4.3",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.15.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^22.0.4",
+    "jsdoc": "^3.5.5",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  }
+}

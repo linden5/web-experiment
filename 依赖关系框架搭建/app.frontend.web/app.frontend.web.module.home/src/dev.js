@@ -2,12 +2,9 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Vuex from 'vuex'
 import { Button, NavBar, Icon, Toast, Swipe, SwipeItem, Panel, Row, Col, Tabbar, TabbarItem, Tag } from 'vant'
-
+import Home from '@/components/Home'
 import App from './App'
-import routes from '@gfloan/app.frontend.web.router'
-import stores from '@gfloan/app.frontend.web.store'
 
 Vue.use(Button)
   .use(NavBar)
@@ -20,19 +17,23 @@ Vue.use(Button)
   .use(Tabbar).use(TabbarItem)
   .use(Tag)
 
+Vue.use(VueRouter)
 Vue.config.productionTip = false
 
-Vue.use(VueRouter)
-Vue.use(Vuex)
-
-const router = new VueRouter(routes)
-const store = new Vuex.Store(stores)
+var router = new VueRouter({
+  routes: [
+    {
+      path: '/',
+      name: 'index',
+      component: Home
+    }
+  ]
+})
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  store,
   components: { App },
   template: '<App/>'
 })

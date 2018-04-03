@@ -4,7 +4,7 @@
 看中的是有赞作为saas提供商的名气，说实话我并没有使用过组件库
 
 ## 每个项目成功发布后在本地私有npm库上的截图
-![本地私有npm库上的截图](./img/private-npm.png)
+![本地私有npm库上的截图](./image/private-npm.png)
 
 ## Node.js的package.json文件当中可以支持哪几种依赖关系
 * [dependencies](https://docs.npmjs.com/files/package.json#dependencies)：依赖，项目代码运行时需要的依赖
