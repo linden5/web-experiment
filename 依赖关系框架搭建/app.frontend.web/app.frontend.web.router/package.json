@@ -1,0 +1,48 @@
+{
+  "name": "@gfloan/app.frontend.web.router",
+  "version": "0.0.13",
+  "description": "路由定义",
+  "author": "liuyunxiang <liuyunxng@qq.com>",
+  "main": "dist/index.js",
+  "private": false,
+  "scripts": {
+    "unit": "jest --config test/unit/jest.conf.js --coverage",
+    "test": "npm run unit",
+    "lint": "eslint --ext .js,.vue src test/unit",
+    "build": "webpack --config ./build/webpack.config.js",
+    "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc",
+    "upgrade": "yarn upgrade --scope @gfloan",
+    "republish": "yarn run upgrade && yarn build && yarn publish"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "dependencies": {
+    "@gfloan/app.frontend.web.common": "^0.0.1",
+    "@gfloan/app.frontend.web.module.home": "^0.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-jest": "^22.4.3",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.15.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^22.0.4",
+    "jsdoc": "^3.5.5",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
