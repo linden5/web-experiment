@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -8,5 +9,10 @@ module.exports = {
     libraryTarget: "umd",
     filename: "index.js"
   },
-  mode: 'production'
+  mode: 'development',
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': require('../config')
+    })
+  ]
 };

@@ -1,11 +1,11 @@
 <template>
   <div>
     <router-view/>
-    <van-tabbar v-model="active">
-      <van-tabbar-item icon="shop">商店</van-tabbar-item>
-      <van-tabbar-item icon="chat" dot>聊天</van-tabbar-item>
-      <van-tabbar-item icon="records" info="5">记录</van-tabbar-item>
-      <van-tabbar-item icon="gold-coin" info="20">金币</van-tabbar-item>
+    <van-tabbar v-model="active" class="tab-bar">
+      <van-tabbar-item icon="after-sale">借款</van-tabbar-item>
+      <van-tabbar-item icon="cash-back-record">还款</van-tabbar-item>
+      <van-tabbar-item icon="gold-coin">理财</van-tabbar-item>
+      <van-tabbar-item icon="contact">我</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
@@ -22,5 +22,8 @@ export default {
 <style>
 .header-page {
   padding-top: 50px;
+}
+.tab-bar {
+  position: fixed;
 }
 </style>

@@ -6,13 +6,14 @@
   "main": "dist/index.js",
   "private": false,
   "scripts": {
-    "watch": "webpack --watch --config ./build/webpack.config.js",
+    "watch": "webpack --watch --config ./build/webpack.dev.config.js",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
-    "build": "webpack --config ./build/webpack.config.js",
+    "build": "webpack --config ./build/webpack.prod.config.js",
+    "devbuild": "webpack --config ./build/webpack.dev.config.js",
     "pub": "yarn run build && yarn publish",
-    "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc",
+    "doc": "./node_modules/.bin/jsdoc -c jsdoc.conf.json -r -d doc",
     "up": "yarn upgrade --scope @gfloan",
     "repup": "yarn run up && yarn build && yarn publish"
   },
@@ -36,7 +37,8 @@
     "jest": "^22.0.4",
     "jsdoc": "^3.5.5",
     "webpack": "^4.4.1",
-    "webpack-cli": "^2.0.13"
+    "webpack-cli": "^2.0.13",
+    "webpack-merge": "^4.1.0"
   },
   "engines": {
     "node": ">= 6.0.0",

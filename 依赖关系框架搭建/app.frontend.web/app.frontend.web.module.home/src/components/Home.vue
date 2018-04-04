@@ -2,10 +2,10 @@
   <div class="header-page">
     <HomeHeaderBar/>
     <van-swipe :autoplay="3000" class="my-swipe">
-      <van-swipe-item class="my-swipe-item">1</van-swipe-item>
-      <van-swipe-item class="my-swipe-item">2</van-swipe-item>
-      <van-swipe-item class="my-swipe-item">3</van-swipe-item>
-      <van-swipe-item class="my-swipe-item">4</van-swipe-item>
+      <van-swipe-item class="my-swipe-item">资讯1</van-swipe-item>
+      <van-swipe-item class="my-swipe-item">资讯2</van-swipe-item>
+      <van-swipe-item class="my-swipe-item">资讯3</van-swipe-item>
+      <van-swipe-item class="my-swipe-item">资讯4</van-swipe-item>
     </van-swipe>
     <van-row class="my-row">
       <van-col span="6">

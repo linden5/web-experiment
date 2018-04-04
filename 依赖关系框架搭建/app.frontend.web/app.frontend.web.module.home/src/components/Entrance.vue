@@ -6,7 +6,12 @@
 </template>
 <script>
 export default {
-  name: 'Loading'
+  name: 'Loading',
+  mounted () {
+    setTimeout(() => {
+      this.$router.push('Home')
+    }, 3000)
+  }
 }
 </script>
 <style>

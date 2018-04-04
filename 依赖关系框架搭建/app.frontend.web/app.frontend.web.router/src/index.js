@@ -1,13 +1,25 @@
 import { Error400, Error401, Error403, Error404, Error500, Error503 } from '@gfloan/app.frontend.web.common'
 import { Home, Entrance, PageFrame } from '@gfloan/app.frontend.web.module.home'
 
+// 通过配置环境变量从DefinePlugin传入来控制语言
+const title = require('./locale/title_' + process.env.lang + '.json')
+
+/** 
+ * @function routeTitleFetch 通过route的名字来取得其标题
+ * @param {Route} route 一个路由对象，包含name属性
+ * @returns {string} 路由的标题
+ */
+export function routeTitleFetch(route) {
+  return title[route.name]
+}
+
 var mainRoutes = {
   path: '/home',
-  name: 'Home',
   component: PageFrame,
   children: [
     {
       path: '/',
+      name: 'Home',
       component: Home
     }
   ]

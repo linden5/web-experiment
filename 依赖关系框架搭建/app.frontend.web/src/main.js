@@ -7,8 +7,8 @@ import { Button, NavBar, Icon, Toast, Swipe, SwipeItem, Panel, Row, Col, Tabbar,
 
 import App from './App'
 import Components from '@gfloan/app.frontend.web.components'
-import routes from '@gfloan/app.frontend.web.router'
-import stores from '@gfloan/app.frontend.web.store'
+import routes, { routeTitleFetch } from '@gfloan/app.frontend.web.router'
+import stores, { MUTATION } from '@gfloan/app.frontend.web.store'
 
 Vue.use(Button)
   .use(NavBar)
@@ -29,6 +29,12 @@ Vue.use(Vuex)
 
 const router = new VueRouter(routes)
 const store = new Vuex.Store(stores)
+
+router.beforeEach((to, from, next) => {
+  var title = routeTitleFetch(to)
+  store.commit(MUTATION.SET_TITLE, title)
+  next()
+})
 
 /* eslint-disable no-new */
 new Vue({

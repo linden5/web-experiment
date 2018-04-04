@@ -1,10 +1,18 @@
+export const STATE = {
+  TITLE: 'title'
+}
+
+export const MUTATION = {
+  SET_TITLE: 'setTitle'
+}
+
 export default {
   state: {
-    count: 0
+    [STATE.TITLE]: 0
   },
   mutations: {
-    increment (state) {
-      state.count++
+    [MUTATION.SET_TITLE] (state, value) {
+      state[STATE.TITLE] = value
     }
   }
 }
