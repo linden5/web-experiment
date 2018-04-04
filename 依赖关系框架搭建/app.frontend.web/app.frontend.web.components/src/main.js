@@ -1,7 +1,7 @@
-import HeaderBar from '@/components/HeaderBar'
+import HomeHeaderBar from '@/components/HomeHeaderBar'
 
 const components = [
-  HeaderBar
+  HomeHeaderBar
 ]
 
 const install = Vue => {
@@ -11,7 +11,7 @@ const install = Vue => {
 }
 
 export {
-  HeaderBar
+  HomeHeaderBar
 }
 
 export default {

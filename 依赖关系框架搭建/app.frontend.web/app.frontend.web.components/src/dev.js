@@ -5,7 +5,7 @@ import VueRouter from 'vue-router'
 import Vuex from 'vuex'
 import { NavBar, Icon } from 'vant'
 import App from './App'
-import Header from '@/components/Header'
+import HomeHeaderBar from '@/components/HomeHeaderBar'
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
@@ -18,7 +18,7 @@ var router = new VueRouter({
     {
       path: '/',
       name: 'index',
-      component: Header
+      component: HomeHeaderBar
     }
   ]
 })

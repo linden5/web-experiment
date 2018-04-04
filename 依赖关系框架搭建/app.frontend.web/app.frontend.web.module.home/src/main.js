@@ -1,9 +1,11 @@
 import Home from '@/components/Home'
 import Entrance from '@/components/Entrance'
+import PageFrame from '@/components/PageFrame'
 
 const components = [
   Home,
-  Entrance
+  Entrance,
+  PageFrame
 ]
 
 const install = Vue => {
@@ -14,7 +16,8 @@ const install = Vue => {
 
 export {
   Home,
-  Entrance
+  Entrance,
+  PageFrame
 }
 
 export default {

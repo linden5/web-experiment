@@ -6,15 +6,18 @@
   "private": false,
   "scripts": {
     "plink": "gulp link --gulpfile build/gulpfile.js",
-    "gen": "gulp link --gulpfile build/gulpfile.js -d ",
+    "gen": "gulp generate --gulpfile build/gulpfile.js -d ",
+    "serve": "gulp dev --gulpfile build/gulpfile.js",
+    "publishall": "gulp publishAll --gulpfile build/gulpfile.js",
+    "installall": "gulp installAll --gulpfile build/gulpfile.js",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "node build/build.js",
-    "upgrade": "yarn upgrade --scope @gfloan",
-    "republish": "yarn run upgrade && yarn build && yarn publish",
+    "up": "yarn upgrade --scope @gfloan",
+    "repub": "yarn run upgrade && yarn build && yarn publish",
     "redev": "yarn && yarn run dev"
   },
   "publishConfig": {

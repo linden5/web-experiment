@@ -1,5 +1,6 @@
 <template>
-  <div class="hello">
+  <div class="header-page">
+    <HomeHeaderBar/>
     <van-swipe :autoplay="3000" class="my-swipe">
       <van-swipe-item class="my-swipe-item">1</van-swipe-item>
       <van-swipe-item class="my-swipe-item">2</van-swipe-item>

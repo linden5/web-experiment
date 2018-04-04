@@ -32,17 +32,27 @@ function execCommand(cmd) {
         console.log(chalk.yellow(stderr))
     })
 }
+
+// 在子项目中执行命令：除core和resource,因为这两个不需要
+function subProjectCmd(cmd) {
+    execCommand('cd ' + COMMON_PATH + cmd)
+    execCommand('cd ' + COMPONENTS_PATH + cmd)
+    execCommand('cd ' + MODULE_HOME_PATH + cmd)
+    execCommand('cd ' + ROUTER_PATH + cmd)
+    execCommand('cd ' + STORE_PATH + cmd)
+    execCommand('cd ' + UTILS_PATH + cmd)
+}
+
+function resourceProjectCmd(cmd) {
+    execCommand('cd ' + CORE_PATH + cmd)
+    execCommand('cd ' + RESOURCE_PATH + cmd)
+}
+
 // yarn link项目，以适应开发模式
 const LINK_COMMAND = ' && yarn link'
 gulp.task('link', () => {
-    execCommand('cd ' + COMMON_PATH + LINK_COMMAND)
-    execCommand('cd ' + COMPONENTS_PATH + LINK_COMMAND)
-    execCommand('cd ' + CORE_PATH + LINK_COMMAND)
-    execCommand('cd ' + MODULE_HOME_PATH + LINK_COMMAND)
-    execCommand('cd ' + RESOURCE_PATH + LINK_COMMAND)
-    execCommand('cd ' + ROUTER_PATH + LINK_COMMAND)
-    execCommand('cd ' + STORE_PATH + LINK_COMMAND)
-    execCommand('cd ' + UTILS_PATH + LINK_COMMAND)
+    subProjectCmd(LINK_COMMAND)
+    resourceProjectCmd(LINK_COMMAND)
 
     execCommand('cd ' + PROJ_PATH)
     execCommand('yarn link @gfloan/app.frontend.web.components')
@@ -58,14 +68,31 @@ gulp.task('link', () => {
 })
 
 
+
+function devMode(name, cmd) {
+    gulp.task(name, () => {
+        subProjectCmd(cmd)
+        execCommand('cd ' + PROJ_PATH + ' && yarn run dev')
+    })
+}
+
 const WATCH_COMMAND = ' && yarn run watch'
-// 开发模式
-gulp.task('dev', () => {
-    execCommand('cd ' + COMMON_PATH + WATCH_COMMAND)
-    execCommand('cd ' + COMPONENTS_PATH + WATCH_COMMAND)
-    execCommand('cd ' + MODULE_HOME_PATH + WATCH_COMMAND)
-    execCommand('cd ' + ROUTER_PATH + WATCH_COMMAND)
-    execCommand('cd ' + STORE_PATH + WATCH_COMMAND)
-    execCommand('cd ' + UTILS_PATH + WATCH_COMMAND)
-    execCommand('cd ' + PROJ_PATH + ' && yarn run dev')
+// 开发模式,进入每一个文件夹监控文件变化，可能会导致机器卡,慎用
+devMode('dev:watch', WATCH_COMMAND)
+
+const BUILD_COMMAND = ' && yarn run build'
+// 开发模式,先对每个子项目打包，然后
+devMode('dev', BUILD_COMMAND)
+
+const PUBLISH_COMMAND = ' && yarn run build && yarn publish && git cmp'
+const PUBLISH_COMMAND_NO_BUILD = ' && yarn publish && git cmp'
+gulp.task('publishAll', () => {
+    subProjectCmd(PUBLISH_COMMAND)
+    resourceProjectCmd(PUBLISH_COMMAND_NO_BUILD)
+})
+
+const INSTALL_COMMAND = ' && yarn'
+gulp.task('installAll', () => {
+    subProjectCmd(INSTALL_COMMAND)
+    resourceProjectCmd(INSTALL_COMMAND)
 })

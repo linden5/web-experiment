@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="header">
     <van-nav-bar :title="title">
       <van-icon name="contact" class="header-icon" slot="left" />
       <van-icon name="chat" class="header-icon" slot="right" />
@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-  name: 'HeaderBar',
+  name: 'HomeHeaderBar',
   computed: {
     title () {
       return this.$store.state.title
@@ -19,5 +19,14 @@ export default {
 <style>
 .header-icon {
   font-size: 25px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  z-index: 1;
 }
 </style>

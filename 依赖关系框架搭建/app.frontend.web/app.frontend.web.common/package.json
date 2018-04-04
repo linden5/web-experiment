@@ -17,7 +17,7 @@
     "pub": "yarn build && yarn publish",
     "repub": "yarn && yarn build && yarn publish",
     "redev": "yarn && yarn run dev",
-    "pp": "yarn run republish && git cmp"
+    "pp": "yarn run repub && git cmp"
   },
   "publishConfig": {
     "registry": "http://localhost:4873"
