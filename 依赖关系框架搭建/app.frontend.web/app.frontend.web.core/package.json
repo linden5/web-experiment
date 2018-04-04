@@ -5,9 +5,6 @@
   "author": "liuyunxiang",
   "license": "MIT",
   "private": false,
-  "scripts": {
-    "build": "webpack --config ./build/webpack.config.js"
-  },
   "dependencies": {
     "axios": "^0.18.0",
     "vant": "^1.0.3",

@@ -56,3 +56,16 @@ gulp.task('link', () => {
     execCommand('yarn link @gfloan/app.frontend.web.common')
     execCommand('yarn link @gfloan/app.frontend.web.module.home')
 })
+
+
+const WATCH_COMMAND = ' && yarn run watch'
+// 开发模式
+gulp.task('dev', () => {
+    execCommand('cd ' + COMMON_PATH + WATCH_COMMAND)
+    execCommand('cd ' + COMPONENTS_PATH + WATCH_COMMAND)
+    execCommand('cd ' + MODULE_HOME_PATH + WATCH_COMMAND)
+    execCommand('cd ' + ROUTER_PATH + WATCH_COMMAND)
+    execCommand('cd ' + STORE_PATH + WATCH_COMMAND)
+    execCommand('cd ' + UTILS_PATH + WATCH_COMMAND)
+    execCommand('cd ' + PROJ_PATH + ' && yarn run dev')
+})

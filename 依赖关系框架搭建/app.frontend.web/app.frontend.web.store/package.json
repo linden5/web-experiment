@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "watch": "webpack --watch --config ./build/webpack.config.js",
     "build": "webpack --config ./build/webpack.config.js",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "lint": "eslint --ext .js src test/unit",

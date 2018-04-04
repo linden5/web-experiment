@@ -6,6 +6,7 @@
   "main": "dist/index.js",
   "private": false,
   "scripts": {
+    "watch": "webpack --watch --config ./build/webpack.config.js",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",

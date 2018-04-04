@@ -6,6 +6,7 @@
   "main": "dist/index.js",
   "private": false,
   "scripts": {
+    "watch": "webpack --watch --config ./build/webpack.prod.conf.js",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
@@ -21,6 +22,9 @@
   },
   "devDependencies": {
     "@gfloan/app.frontend.web.core": "^0.0.4",
+    "@gfloan/app.frontend.web.components": "^0.0.7",
+    "@gfloan/app.frontend.web.router": "^0.0.18",
+    "@gfloan/app.frontend.web.store": "^0.0.1",
     "autoprefixer": "^8.2.0",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",

@@ -1,3 +1,17 @@
 {
-    "hello": "hello"
+    "hello": "hello",
+    "home": {
+        "msg": "Welcome to Your Vue.js App",
+        "title": "Essential Links",
+        "coreDoc": "Core Docs",
+        "forum": "Forum",
+        "community": "Community Chat",
+        "twitter": "Twitter",
+        "templateDoc": "Docs for This Template",
+        "ecosystem": "Ecosystem",
+        "vueRouter": "vue-router",
+        "vuex": "vuex",
+        "vueLoader": "vue-loader",
+        "awesomeVue": "awesome-vue"
+    }
 }
