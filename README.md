@@ -4,7 +4,7 @@
 1.  [私有npm仓库搭建](./私有npm仓库搭建.md)
 2.  全局安装[yarn](https://yarn.org.cn/)
 >   npm i -g yarn
-3.  全局安装webpack(全局安装webpack-cli需要)
+3.  全局安装webpack(全局安装webpack-cli所需要，但这只针对使用^4.0.0以上版本的时候，^3.0.0不用执行3、4步骤)
 >   npm i -g webpack
 4.  全局安装webpack-cli
 >   npm i -g webpack-cli

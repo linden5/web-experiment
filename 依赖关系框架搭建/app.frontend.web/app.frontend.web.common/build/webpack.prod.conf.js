@@ -21,7 +21,7 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    index: './src/main.js'
+    index: './src/index.js'
   },
   output: {
     path: path.resolve(__dirname, '../dist'),

@@ -84,7 +84,11 @@ const BUILD_COMMAND = ' && yarn run build'
 // 开发模式,先对每个子项目打包，然后
 devMode('dev', BUILD_COMMAND)
 
-const PUBLISH_COMMAND = ' && yarn run build && yarn publish && git cmp'
+var newVersion = argv['new-version']
+var gitMessage = argv.m
+const PUBLISH_COMMAND = 
+    ' && yarn run build && yarn publish --new-version ' + newVersion + 
+    ' && git cmp ' + gitMessage
 const PUBLISH_COMMAND_NO_BUILD = ' && yarn publish && git cmp'
 gulp.task('publishAll', () => {
     subProjectCmd(PUBLISH_COMMAND)
