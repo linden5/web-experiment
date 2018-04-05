@@ -14,3 +14,4 @@
 * [optionalDependencies](https://docs.npmjs.com/files/package.json#optionaldependencies):可选依赖,这个依赖在发布包中可以有，也可以没有，如果找不到或无法安装，让npm去处理，但是在代码中会根据有没有这个依赖包做不同的处理
 
 ## 编译、执行各模块代码所需进行的ide配置
+暂未用到，知道可以配置vscode task,一般我是直接开集成终端

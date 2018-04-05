@@ -1,32 +1,49 @@
-# @gfloan/app.frontend.web.scaffold
+# 首页模块
 
-> 首先是从vue-cli webpack模板生成的项目原有的说明
-> A scaffold project based on vue-cli webpack template
+当前包含了三个页面：
+* Entrance:加载页，3秒之后跳转到首页
+* Finance:理财页，点击页面底部导航栏后进入
+* Home:首页
 
-## Build Setup
+需要说明的是，**页面中的轮播图现在都是直接拿色块代替的**
+
+## 构建命令
 
 ``` bash
-# install dependencies
-npm install
+# 监听文件变化并重新打包，用于在app.frontend.web项目中进行开发,需要执行yarn link
+yarn run watch
 
-# serve with hot reload at localhost:8080
-npm run dev
+# 在本项目中进行开发，实时看到修改情况
+yarn run dev
+# 或
+yarn run start
 
-# build for production with minification
-npm run build
+# 单元测试
+yarn run unit
+# 或
+yarn run test
 
-# build for production and view the bundle analyzer report
-npm run build --report
+# 代码规范检查
+yarn run lint
 
-# run unit tests
-npm run unit
+# 项目打包，用于在app.frontend.web项目中进行开发
+yarn run devbuild
 
-# run all tests
-npm test
+# 项目发布前打包
+yarn run build
+
+# 生成文档
+yarn run doc
+
+# 打包并发布到npm库
+yarn run pub
+
+# 重新安装依赖并发布到npm库
+yarn run repub
+
+# 重新安装依赖并进入本地开发模式
+yarn run redev
+
+# 重新安装依赖并发布到npm库，并且提交到远程git
+yarn run pp <你的git提交信息>
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-## 项目说明
-该脚手架项目基于vue-cli webpack模板，依照开发中的实际需要进行了一些调整
-* 为了去除重复依赖，向webpack插件配置中添加了webpack.optimize.DedupePlugin

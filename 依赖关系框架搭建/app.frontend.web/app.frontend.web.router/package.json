@@ -15,7 +15,7 @@
     "pub": "yarn run build && yarn publish",
     "doc": "./node_modules/.bin/jsdoc -c jsdoc.conf.json -r -d doc",
     "up": "yarn upgrade --scope @gfloan",
-    "repup": "yarn run up && yarn build && yarn publish"
+    "repub": "yarn run up && yarn build && yarn publish"
   },
   "publishConfig": {
     "registry": "http://localhost:4873"

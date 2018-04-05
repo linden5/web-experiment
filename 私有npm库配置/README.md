@@ -43,4 +43,4 @@ packages:
 ## 发布使用私有库的项目
 1.  添加账号gfloan并登录
 > npm adduser --registry http://localhost:4873
-2.  在项目的package.json中将"private"属性设置为false
+2.  在项目的package.json中将"private"属性设置为false(对于true的项目如何发布，我还没有仔细研究,应该是我登录用户名不对)
