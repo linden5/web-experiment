@@ -1,6 +1,6 @@
 {
   "name": "@gfloan/app.frontend.web.utils",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "各个子模块的公用function、class和全局变量",
   "main": "dist/index.js",
   "repository": "https://github.com/linden5-WebExperiment/app.frontend.web.utils.git",
