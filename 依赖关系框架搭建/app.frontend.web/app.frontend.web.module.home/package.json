@@ -1,6 +1,6 @@
 {
   "name": "@gfloan/app.frontend.web.module.home",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "首页模块",
   "author": "liuyunxiang <liuyunxng@qq.com>",
   "main": "dist/index.js",
