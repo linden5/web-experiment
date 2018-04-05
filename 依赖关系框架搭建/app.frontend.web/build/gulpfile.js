@@ -99,7 +99,7 @@ devMode('dev', BUILD_COMMAND)
 // 发布所有的项目，并push到git仓库
 var newVersion = argv['new-version']
 var gitMessage = argv.m
-const PUBLISH_COMMAND = 
+const PUBLISH_COMMAND = 'yarn run doc' +
     ' && yarn run build && yarn publish --new-version ' + newVersion + 
     ' && git cmp ' + gitMessage
 const PUBLISH_COMMAND_NO_BUILD = ' && yarn publish && git cmp'

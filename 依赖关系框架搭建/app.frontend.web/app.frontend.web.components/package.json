@@ -15,7 +15,7 @@
     "devbuild": "webpack --config ./build/webpack.outdev.conf.js",
     "build": "webpack --config ./build/webpack.prod.conf.js",
     "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc",
-    "pub": "yarn build && yarn publish",
+    "pub": "yarn run doc && yarn build && yarn publish",
     "repub": "yarn && yarn run pub"
   },
   "publishConfig": {

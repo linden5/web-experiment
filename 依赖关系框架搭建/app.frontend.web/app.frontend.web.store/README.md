@@ -26,4 +26,10 @@ yarn run build
 
 # 生成文档
 yarn run doc
+
+# 打包并发布到npm库,且成生文档
+yarn run pub
 ```
+
+## 发布截图
+![store.png](./image/store.png)

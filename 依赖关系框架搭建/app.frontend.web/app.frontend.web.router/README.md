@@ -27,7 +27,7 @@ yarn run build
 # 生成文档
 yarn run doc
 
-# 打包并发布到npm库
+# 打包并发布到npm库,且成生文档
 yarn run pub
 
 # 重新安装依赖并发布到npm库
@@ -43,3 +43,6 @@ yarn run up
 因为该项目依赖于common,home,login三个子项目，所以当上述三个子项目代码发生了变动的时候，router项目需要重新打包。
 
 但是经过实验，webpack在watch模式下即使定义了watchOption让其监听node_modules文件夹的变化，当上述三个项目发生变化的时候，也不会重新打包**(可能是我的配置还有一些问题)**,所以开发过程中，我经常是手动对该项目进行重新打包
+
+## 发布截图
+![router.png](./image/router.png)

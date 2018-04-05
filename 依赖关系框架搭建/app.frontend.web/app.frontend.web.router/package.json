@@ -12,7 +12,7 @@
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "webpack --config ./build/webpack.prod.config.js",
     "devbuild": "webpack --config ./build/webpack.dev.config.js",
-    "pub": "yarn run build && yarn publish",
+    "pub": "yarn run doc && yarn run build && yarn publish",
     "doc": "./node_modules/.bin/jsdoc -c jsdoc.conf.json -r -d doc",
     "up": "yarn upgrade --scope @gfloan",
     "repub": "yarn run up && yarn build && yarn publish"

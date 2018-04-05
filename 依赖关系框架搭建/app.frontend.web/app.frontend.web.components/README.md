@@ -41,3 +41,6 @@ yarn run pub
 yarn run repub
 
 ```
+
+## 发布截图
+![components.png](./image/components.png)

@@ -25,12 +25,12 @@
     "registry": "http://localhost:4873"
   },
   "dependencies": {
-    "@gfloan/app.frontend.web.components": "^0.0.7",
+    "@gfloan/app.frontend.web.components": "^0.0.9",
     "@gfloan/app.frontend.web.core": "^0.0.4",
-    "@gfloan/app.frontend.web.resource": "^0.0.3",
-    "@gfloan/app.frontend.web.router": "^0.0.18",
-    "@gfloan/app.frontend.web.store": "^0.0.1",
-    "@gfloan/app.frontend.web.utils": "^0.0.4"
+    "@gfloan/app.frontend.web.resource": "^0.0.4",
+    "@gfloan/app.frontend.web.router": "^0.0.19",
+    "@gfloan/app.frontend.web.store": "^0.0.2",
+    "@gfloan/app.frontend.web.utils": "^0.0.5"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

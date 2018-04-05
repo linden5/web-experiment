@@ -46,3 +46,6 @@ yarn run redev
 # 重新安装依赖并发布到npm库，并且提交到远程git
 yarn run pp <你的git提交信息>
 ```
+
+## 发布截图
+![common.png](./image/common.png)

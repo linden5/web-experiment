@@ -12,7 +12,8 @@
     "build": "webpack --config ./build/webpack.config.js",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "lint": "eslint --ext .js src test/unit",
-    "doc": "./node_modules/.bin/jsdoc -c jsdoc.conf.json -r -d doc"
+    "doc": "./node_modules/.bin/jsdoc -c jsdoc.conf.json -r -d doc",
+    "pub": "yarn run doc && yarn run build && yarn publish"
   },
   "devDependencies": {
     "babel-jest": "^22.4.3",
