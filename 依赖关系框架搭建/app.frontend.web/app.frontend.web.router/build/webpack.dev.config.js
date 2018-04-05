@@ -14,5 +14,12 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': require('../config')
     })
-  ]
+  ],
+  watchOptions: {
+    poll: false,
+    ignored: [
+      /node_modules([\\]+|\/)+(?!\@gfloan)/, 
+      /\@gfloan([\\]+|\/).*node_modules/
+    ]
+  }
 };

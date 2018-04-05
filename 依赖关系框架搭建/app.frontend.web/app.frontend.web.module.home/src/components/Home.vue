@@ -7,107 +7,118 @@
       <van-swipe-item class="my-swipe-item">资讯3</van-swipe-item>
       <van-swipe-item class="my-swipe-item">资讯4</van-swipe-item>
     </van-swipe>
-    <van-row class="my-row">
-      <van-col span="6">
-        <van-icon name="success" class="my-icon"/>
-        <p id="test-success">成功</p>
-      </van-col>
-      <van-col span="6">
-        <van-icon name="chat" class="my-icon"/>
-        <p>聊天</p>
-      </van-col>
-      <van-col span="6">
-        <van-icon name="shop" class="my-icon"/>
-        <p>购物</p>
-      </van-col>
-      <van-col span="6">
-        <van-icon name="question" class="my-icon"/>
-        <p>问题</p>
-      </van-col>
-    </van-row>
-    <van-row class="my-row">
-      <van-col span="6">
-        <van-icon name="clock" class="my-icon"/>
-        <p>钟表</p>
-      </van-col>
-      <van-col span="6">
-        <van-icon name="logistics" class="my-icon"/>
-        <p>后勤</p>
-      </van-col>
-      <van-col span="6">
-        <van-icon name="edit" class="my-icon"/>
-        <p>编辑</p>
-      </van-col>
-      <van-col span="6">
-        <van-icon name="exchange" class="my-icon"/>
-        <p>交换</p>
-      </van-col>
-    </van-row>
-    <van-panel title="灵活期限" desc="" status="更多 >" class="text-left">
-      <van-row class="recommend-list font-small">
-        <van-col span="8" class="text-center">
-          <h4>现金增利</h4>
-          <p>保证金余额理财</p>
-          <p>支持快存快取</p>
-          <van-icon name="after-sale" class="my-icon"></van-icon>
-        </van-col>
-        <van-col span="8" class="text-center">
-          <h4>现金增利</h4>
-          <p>保证金余额理财</p>
-          <p>支持快存快取</p>
-          <van-icon name="points" class="my-icon"></van-icon>
-        </van-col>
-        <van-col span="8" class="text-center">
-          <h4>现金增利</h4>
-          <p>保证金余额理财</p>
-          <p>支持快存快取</p>
-          <van-icon name="discount" class="my-icon"></van-icon>
-        </van-col>
-      </van-row>
-    </van-panel>
-
-    <van-panel title="固定期限" status="更多 >" class="text-left bottom-component">
-      <van-row class="recommend-list">
-        <van-col span="8">
-          <p class="highlight">10.10%</p>
-          <p>登录查看</p>
-        </van-col>
-        <van-col span="16">
-          <p>广发收益宝364天期</p>
-          <van-tag plain type="primary">低风险</van-tag>
-          <van-tag plain>364天</van-tag>
-          <van-tag plain>5万元起购</van-tag>
-        </van-col>
-      </van-row>
-    </van-panel>
+    <div class="promotion">
+      <p class="promotion-title">随意借最高额度(元)</p>
+      <p class="promotion-money">5000.00</p>
+      <van-tag type="danger" class="promotion-btn">我要申请</van-tag>
+    </div>
+    <van-tabs :active="active">
+        <van-tab v-for="(value, tabindex) in tabs" :title="value" :key="tabindex">
+            <van-row class="recommend-list" v-for="(recommend, index) in recommends[tabindex]" :key="index">
+                <van-col span="2">
+                    <van-icon name="shop" class="leading-icon"></van-icon>
+                </van-col>
+                <van-col span="11" class="text-left">
+                    <p class="product-title">{{recommend.name}}</p>
+                    <p class="product-desc">{{recommend.desc}}</p>
+                </van-col>
+                <van-col span="11">
+                    <van-tag plain type="danger">{{recommend.start | money}}-{{recommend.end | money}}</van-tag>
+                    <van-tag plain type="danger">日息万{{recommend.rate}}起</van-tag>
+                </van-col>
+            </van-row>
+        </van-tab>
+    </van-tabs>
   </div>
 </template>
 
 <script>
-import { Toast } from 'vant'
 
 export default {
   name: 'Home',
+  created () {
+    console.log(this)
+    this.$axios.get('http://cn.bing.com').then(response => {
+      console.log(response)
+    })
+  },
   data () {
     return {
       // lang: require('../locales/' + process.env.LANG + '.json'),
-      active: 0
+      active: 0,
+      tabs: ['热门推荐', '极速推荐', '低息推荐'],
+      recommends: [
+        [
+          {
+            rate: 10.00,
+            name: '广发收益宝364天期',
+            desc: '低风险',
+            start: 100,
+            end: 10000,
+            startPrice: 5
+          },
+          {
+            rate: 10.00,
+            name: '广发收益宝365天期',
+            desc: '低风险',
+            start: 100,
+            end: 10000,
+            duration: 365,
+            startPrice: 5
+          }
+        ],
+        [
+          {
+            rate: 9,
+            name: '极速推荐1',
+            desc: '低风险',
+            start: 100,
+            end: 10000,
+            startPrice: 5
+          },
+          {
+            rate: 9,
+            name: '极速推荐2',
+            desc: '低风险',
+            start: 2000,
+            end: 500000,
+            duration: 365,
+            startPrice: 5
+          }
+        ],
+        [
+          {
+            rate: 9,
+            name: '低息推荐1',
+            desc: '低风险',
+            start: 100,
+            end: 10000,
+            startPrice: 5
+          },
+          {
+            rate: 9,
+            name: '低息推荐2',
+            desc: '低风险',
+            start: 2000,
+            end: 500000,
+            duration: 365,
+            startPrice: 5
+          }
+        ]
+      ]
     }
   },
-  computed: {
-    // active() {
-    //   return 0
-    // }
-  },
-  methods: {
-    onClickLeft () {
-      Toast('返回')
-    },
-    onClickRight () {
-      Toast('按钮')
-    },
-    tabClick () {
-
+  filters: {
+    money (value) {
+      if (value >= 100 && value < 1000) {
+        return parseInt(value / 100) + '百'
+      }
+      if (value >= 1000 && value < 10000) {
+        return parseInt(value / 1000) + '千'
+      }
+      if (value >= 10000) {
+        return parseInt(value / 10000) + '万'
+      }
     }
   }
 }
@@ -148,12 +159,40 @@ p, h4 {
   padding: 15px;
 }
 
-.highlight {
-  color: red;
+.bottom-component {
+  padding-bottom: 60px;
+}
+
+.product-title {
   font-size: 18px;
 }
 
-.bottom-component {
-  padding-bottom: 10rem;
+.product-desc {
+  font-size: 14px;
+  color: gray;
+}
+
+.leading-icon {
+  position: relative;
+  top: 5px;
+}
+
+.promotion {
+  margin: 20px;
+  padding: 20px;
+  color: white;
+  background: #f44;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.promotion-title {
+  font-size: 18px;
+}
+.promotion-money {
+  font-size: 40px;
+}
+.promotion-btn {
+  font-size: 18px;
 }
 </style>

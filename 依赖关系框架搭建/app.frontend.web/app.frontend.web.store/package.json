@@ -29,6 +29,9 @@
     "webpack": "^4.4.1",
     "webpack-cli": "^2.0.13"
   },
+  "peerDependencies": {
+    "@gfloan/app.frontend.web": "^1.0.0"
+  },
   "publishConfig": {
     "registry": "http://localhost:4873"
   }

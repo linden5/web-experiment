@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "@gfloan/app.frontend.web.common": "^0.0.1",
-    "@gfloan/app.frontend.web.module.home": "^0.0.9"
+    "@gfloan/app.frontend.web.module.home": "^0.0.9",
+    "@gfloan/app.frontend.web.module.login": "^0.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
@@ -39,6 +40,9 @@
     "webpack": "^4.4.1",
     "webpack-cli": "^2.0.13",
     "webpack-merge": "^4.1.0"
+  },
+  "peerDependencies": {
+    "@gfloan/app.frontend.web": "^1.0.0"
   },
   "engines": {
     "node": ">= 6.0.0",

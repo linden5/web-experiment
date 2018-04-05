@@ -1,27 +1,30 @@
 {
-  "name": "@gfloan/app.frontend.web.scaffold",
-  "version": "0.0.3",
-  "description": "公共组件",
+  "name": "@gfloan/<%=projectName>",
+  "version": "0.0.1",
+  "description": "首页模块",
   "author": "liuyunxiang <liuyunxng@qq.com>",
   "main": "dist/index.js",
   "private": false,
   "scripts": {
+    "watch": "webpack --watch --config build/webpack.outdev.conf.js",
+    "devbuild": "webpack --config build/webpack.outdev.conf.js",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
-    "build": "webpack --config ./build/webpack.conf.js",
-    "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc"
+    "build": "webpack --config build/webpack.prod.conf.js",
+    "doc": "./node_modules/.bin/jsdoc -c conf.json -r -d doc",
+    "pub": "yarn build && yarn publish",
+    "repub": "yarn && yarn build && yarn publish",
+    "redev": "yarn && yarn run dev",
+    "pp": "yarn run republish && git cmp"
   },
   "publishConfig": {
     "registry": "http://localhost:4873"
   },
-  "dependencies": {
-    "@gfloan/app.frontend.web.core": "^0.0.1",
-    "@gfloan/app.frontend.web.utils": "^0.0.5"
-  },
   "devDependencies": {
+    "@gfloan/app.frontend.web.core": "^0.0.4",
     "autoprefixer": "^8.2.0",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
@@ -29,6 +32,7 @@
     "babel-jest": "^22.4.3",
     "babel-loader": "^7.1.1",
     "babel-plugin-dynamic-import-node": "^1.2.0",
+    "babel-plugin-import": "^1.6.7",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.22.0",
@@ -63,10 +67,9 @@
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
     "rimraf": "^2.6.0",
-    "rollup": "^0.57.1",
-    "rollup-plugin-uglify": "^3.0.0",
     "semver": "^5.3.0",
     "shelljs": "^0.8.1",
+    "style-loader": "^0.20.3",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^1.0.1",
     "vue": "^2.5.16",
@@ -74,8 +77,13 @@
     "vue-loader": "^14.2.2",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.2",
-    "webpack": "^4.4.1",
-    "webpack-cli": "^2.0.13"
+    "webpack": "^3.6.0",
+    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-dev-server": "^2.9.1",
+    "webpack-merge": "^4.1.0"
+  },
+  "peerDependencies": {
+    "@gfloan/app.frontend.web": "^1.0.0"
   },
   "engines": {
     "node": ">= 6.0.0",

@@ -1,31 +1,44 @@
 const exec = require('child_process').exec
 const path = require('path')
 const gulp = require('gulp')
+const replace = require('gulp-replace')
 const minimist = require('minimist')
 const chalk = require('chalk')
 const TEMPLATE_PATH = path.resolve(__dirname, '../app.frontend.web.scaffold')
 
 var argv = minimist(process.argv.slice(3))
-var destPath = argv.d
 
 // 从脚手架项目生成模板项目
+var destName = argv.d
+var destPath = path.resolve(__dirname, '../' + destName)
 gulp.task('generate', () =>{
-    gulp.src([TEMPLATE_PATH + '/**/*', '!' + TEMPLATE_PATH + '/node_modules/**'])
+    gulp.src([TEMPLATE_PATH + '/**/*', '!' + TEMPLATE_PATH + '/node_modules/**', '!' + TEMPLATE_PATH + '/package.json'])
+        .pipe(gulp.dest(destPath))
+    gulp.src(TEMPLATE_PATH + '/package.json')
+        .pipe(replace('<%=projectName>', destName))
         .pipe(gulp.dest(destPath))
 })
 
 // 项目文件夹定义
 const PROJ_PATH = path.resolve(__dirname, '../')
-
-const COMPONENTS_PATH = path.resolve(__dirname, '../app.frontend.web.components')
-const CORE_PATH = path.resolve(__dirname, '../app.frontend.web.core')
-const RESOURCE_PATH = path.resolve(__dirname, '../app.frontend.web.resource')
-const STORE_PATH = path.resolve(__dirname, '../app.frontend.web.store')
-const UTILS_PATH = path.resolve(__dirname, '../app.frontend.web.utils')
 const ROUTER_PATH = path.resolve(__dirname, '../app.frontend.web.router')
-const COMMON_PATH = path.resolve(__dirname, '../app.frontend.web.common')
-const MODULE_HOME_PATH = path.resolve(__dirname, '../app.frontend.web.module.home')
+// 需要进行构建的子项目
+var buildProjects = [
+    path.resolve(__dirname, '../app.frontend.web.components'),
+    path.resolve(__dirname, '../app.frontend.web.store'),
+    path.resolve(__dirname, '../app.frontend.web.utils'),
+    ROUTER_PATH,
+    path.resolve(__dirname, '../app.frontend.web.common'),
+    path.resolve(__dirname, '../app.frontend.web.module.home'),
+    path.resolve(__dirname, '../app.frontend.web.module.login')
+]
 
+// 不用构建的子项目
+var unbuildProjects = [
+    path.resolve(__dirname, '../app.frontend.web.core'),
+    path.resolve(__dirname, '../app.frontend.web.resource')
+]
+// 执行命令并打印输出结果
 function execCommand(cmd) {
     exec(cmd, (err, stdout, stderr) => {
         console.log(chalk.green(stdout))
@@ -35,17 +48,15 @@ function execCommand(cmd) {
 
 // 在子项目中执行命令：除core和resource,因为这两个不需要
 function subProjectCmd(cmd) {
-    execCommand('cd ' + COMMON_PATH + cmd)
-    execCommand('cd ' + COMPONENTS_PATH + cmd)
-    execCommand('cd ' + MODULE_HOME_PATH + cmd)
-    execCommand('cd ' + ROUTER_PATH + cmd)
-    execCommand('cd ' + STORE_PATH + cmd)
-    execCommand('cd ' + UTILS_PATH + cmd)
+    buildProjects.forEach(path => {
+        execCommand('cd ' + path + cmd)
+    })
 }
 
 function resourceProjectCmd(cmd) {
-    execCommand('cd ' + CORE_PATH + cmd)
-    execCommand('cd ' + RESOURCE_PATH + cmd)
+    unbuildProjects.forEach(path => {
+        execCommand('cd ' + path + cmd)
+    })
 }
 
 // yarn link项目，以适应开发模式
@@ -65,6 +76,7 @@ gulp.task('link', () => {
     execCommand('cd ' + ROUTER_PATH)
     execCommand('yarn link @gfloan/app.frontend.web.common')
     execCommand('yarn link @gfloan/app.frontend.web.module.home')
+    execCommand('yarn link @gfloan/app.frontend.web.module.login')
 })
 
 
@@ -81,9 +93,10 @@ const WATCH_COMMAND = ' && yarn run watch'
 devMode('dev:watch', WATCH_COMMAND)
 
 const BUILD_COMMAND = ' && yarn run build'
-// 开发模式,先对每个子项目打包，然后
+// 开发模式,先对每个子项目打包，然后启动根应用的dev命令
 devMode('dev', BUILD_COMMAND)
 
+// 发布所有的项目，并push到git仓库
 var newVersion = argv['new-version']
 var gitMessage = argv.m
 const PUBLISH_COMMAND = 
@@ -95,6 +108,7 @@ gulp.task('publishAll', () => {
     resourceProjectCmd(PUBLISH_COMMAND_NO_BUILD)
 })
 
+// 安装所有项目的依赖
 const INSTALL_COMMAND = ' && yarn'
 gulp.task('installAll', () => {
     subProjectCmd(INSTALL_COMMAND)
