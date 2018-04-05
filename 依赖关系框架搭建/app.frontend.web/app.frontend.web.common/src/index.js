@@ -4,6 +4,7 @@ import Error400 from '@/components/Error400'
 import Error403 from '@/components/Error403'
 import Error500 from '@/components/Error500'
 import Error503 from '@/components/Error503'
+import PageFrame from '@/components/PageFrame'
 
 const components = [
   Error404,
@@ -11,7 +12,8 @@ const components = [
   Error400,
   Error403,
   Error500,
-  Error503
+  Error503,
+  PageFrame
 ]
 
 const install = Vue => {
@@ -26,7 +28,8 @@ export {
   Error400,
   Error403,
   Error500,
-  Error503
+  Error503,
+  PageFrame
 }
 
 export default {

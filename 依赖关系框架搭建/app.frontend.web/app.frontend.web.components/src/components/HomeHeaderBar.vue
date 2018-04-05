@@ -2,7 +2,7 @@
   <div class="header">
     <van-nav-bar :title="title">
       <van-icon name="contact" class="header-icon" slot="left" />
-      <van-icon name="chat" class="header-icon" slot="right" />
+      <van-icon name="chat" class="header-icon" slot="right" @click="notImplemented()"/>
     </van-nav-bar>
   </div>
 </template>
@@ -13,20 +13,14 @@ export default {
     title () {
       return this.$store.state.title
     }
+  },
+  methods: {
+    notImplemented () {
+      this.$vant.Dialog.alert({
+        title: '客服联系方式',
+        message: 'liuyunxng@foxmail.com'
+      })
+    }
   }
 }
 </script>
-<style>
-.header-icon {
-  font-size: 25px;
-}
-
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 50px;
-  width: 100%;
-  z-index: 1;
-}
-</style>

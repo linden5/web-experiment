@@ -1,7 +1,10 @@
+import '@/assets/style/header.css'
 import HomeHeaderBar from '@/components/HomeHeaderBar'
+import NavHeaderBar from '@/components/NavHeaderBar'
 
 const components = [
-  HomeHeaderBar
+  HomeHeaderBar,
+  NavHeaderBar
 ]
 
 const install = Vue => {
@@ -11,7 +14,8 @@ const install = Vue => {
 }
 
 export {
-  HomeHeaderBar
+  HomeHeaderBar,
+  NavHeaderBar
 }
 
 export default {

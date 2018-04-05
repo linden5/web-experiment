@@ -1,7 +1,10 @@
 'use strict'
 const path = require('path')
-const config = require('../config')
+const merge = require('webpack-merge')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const basicConfig = require('./webpack.outdev.conf')
+const config = require('../config')
+
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -18,50 +21,12 @@ const createLintingRule = () => ({
   }
 })
 
-module.exports = {
-  context: path.resolve(__dirname, '../'),
-  entry: {
-    index: './src/index.js'
-  },
-  output: {
-    libraryTarget: "umd",
-    filename: "index.js"
-  },
-  resolve: {
-    extensions: ['.js', '.vue', '.json'],
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
-    }
-  },
+module.exports = merge(basicConfig, {
+  mode: 'production',
   module: {
     rules: [
-      ...(config.dev.useEslint ? [createLintingRule()] : []),
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader'
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: 'img/[name].[hash:7].[ext]'
-        }
-      }
+      ...(config.dev.useEslint ? [createLintingRule()] : [])
     ]
-  },
-  node: {
-    // prevent webpack from injecting useless setImmediate polyfill because Vue
-    // source contains it (although only uses it if it's native).
-    setImmediate: false,
-    // prevent webpack from injecting mocks to Node native modules
-    // that does not make sense for the client
-    dgram: 'empty',
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty',
-    child_process: 'empty'
   },
   plugins: [
     new UglifyJsPlugin({
@@ -74,4 +39,4 @@ module.exports = {
       parallel: true
     })
   ]
-}
+})

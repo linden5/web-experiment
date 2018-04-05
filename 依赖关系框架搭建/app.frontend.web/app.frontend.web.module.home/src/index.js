@@ -1,11 +1,11 @@
 import Home from '@/components/Home'
 import Entrance from '@/components/Entrance'
-import PageFrame from '@/components/PageFrame'
+import Finance from '@/components/Finance'
 
 const components = [
   Home,
   Entrance,
-  PageFrame
+  Finance
 ]
 
 const install = Vue => {
@@ -17,7 +17,7 @@ const install = Vue => {
 export {
   Home,
   Entrance,
-  PageFrame
+  Finance
 }
 
 export default {

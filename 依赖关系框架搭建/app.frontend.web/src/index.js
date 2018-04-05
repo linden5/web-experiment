@@ -3,13 +3,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
-import { Button, NavBar, Icon, Toast, Swipe, SwipeItem, Panel, Row, Col, Tabbar, TabbarItem, Tag } from 'vant'
+import axios from 'axios'
+import { 
+  Button, NavBar, Icon, Toast, Swipe, SwipeItem, Panel, 
+  Row, Col, Tabbar, TabbarItem, Tag, Tab, Tabs, Dialog 
+} from 'vant'
 
 import App from './App'
 import Components from '@gfloan/app.frontend.web.components'
 import routes, { routeTitleFetch } from '@gfloan/app.frontend.web.router'
 import stores, { MUTATION } from '@gfloan/app.frontend.web.store'
 
+// 库引入
 Vue.use(Button)
   .use(NavBar)
   .use(Icon)
@@ -20,13 +25,19 @@ Vue.use(Button)
   .use(Row).use(Col)
   .use(Tabbar).use(TabbarItem)
   .use(Tag)
-
-Vue.use(Components)
-Vue.config.productionTip = false
-
+  .use(Tab).use(Tabs)
 Vue.use(VueRouter)
 Vue.use(Vuex)
 
+Vue.prototype.$axios = axios
+Vue.prototype.$vant = {
+  Toast,
+  Dialog
+}
+Vue.config.productionTip = false
+
+// 本项目开发内容引入
+Vue.use(Components)
 const router = new VueRouter(routes)
 const store = new Vuex.Store(stores)
 

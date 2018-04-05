@@ -1,0 +1,12 @@
+.van-icon.header-icon {
+  font-size: 25px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  z-index: 1;
+}

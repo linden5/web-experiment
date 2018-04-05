@@ -1,5 +1,5 @@
-import { Error400, Error401, Error403, Error404, Error500, Error503 } from '@gfloan/app.frontend.web.common'
-import { Home, Entrance, PageFrame } from '@gfloan/app.frontend.web.module.home'
+import { Error400, Error401, Error403, Error404, Error500, Error503, PageFrame } from '@gfloan/app.frontend.web.common'
+import { Home, Entrance, Finance } from '@gfloan/app.frontend.web.module.home'
 
 // 通过配置环境变量从DefinePlugin传入来控制语言
 const title = require('./locale/title_' + process.env.lang + '.json')
@@ -21,6 +21,11 @@ var mainRoutes = {
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/finance',
+      name: 'Finance',
+      component: Finance
     }
   ]
 }

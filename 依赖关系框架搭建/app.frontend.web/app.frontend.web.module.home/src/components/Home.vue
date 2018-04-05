@@ -12,7 +12,7 @@
       <p class="promotion-money">5000.00</p>
       <van-tag type="danger" class="promotion-btn">我要申请</van-tag>
     </div>
-    <van-tabs :active="active">
+    <van-tabs :active="active" class="no-padding">
         <van-tab v-for="(value, tabindex) in tabs" :title="value" :key="tabindex">
             <van-row class="recommend-list" v-for="(recommend, index) in recommends[tabindex]" :key="index">
                 <van-col span="2">
@@ -36,17 +36,11 @@
 
 export default {
   name: 'Home',
-  created () {
-    console.log(this)
-    this.$axios.get('http://cn.bing.com').then(response => {
-      console.log(response)
-    })
-  },
   data () {
     return {
       // lang: require('../locales/' + process.env.LANG + '.json'),
-      active: 0,
       tabs: ['热门推荐', '极速推荐', '低息推荐'],
+      active: 0,
       recommends: [
         [
           {
@@ -194,5 +188,9 @@ p, h4 {
 }
 .promotion-btn {
   font-size: 18px;
+}
+
+.no-padding {
+  padding: 0;
 }
 </style>
