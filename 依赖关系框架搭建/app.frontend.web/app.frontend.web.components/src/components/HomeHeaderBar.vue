@@ -1,8 +1,10 @@
 <template>
   <div class="header">
-    <van-nav-bar :title="title">
-      <van-icon name="contact" class="header-icon" slot="left" />
-      <van-icon name="chat" class="header-icon" slot="right" @click="notImplemented()"/>
+    <van-nav-bar :title="title" @click-left="login" @click-right="notImplemented">
+      <van-tabbar slot="left">
+        <van-tabbar-item icon="contact" class="header-icon" dot/>
+      </van-tabbar>
+      <van-icon name="chat" class="header-icon" slot="right"/>
     </van-nav-bar>
   </div>
 </template>
@@ -15,6 +17,10 @@ export default {
     }
   },
   methods: {
+    login () {
+      console.log('fuck')
+      this.$router.push('Login')
+    },
     notImplemented () {
       this.$vant.Dialog.alert({
         title: '客服联系方式',
@@ -24,3 +30,8 @@ export default {
   }
 }
 </script>
+<style>
+.header-icon .van-tabbar-item__icon {
+  margin-bottom: 0;
+}
+</style>

@@ -20,9 +20,6 @@ export default {
 }
 </script>
 <style>
-.header-page {
-  padding-top: 50px;
-}
 .tab-bar {
   position: fixed;
 }

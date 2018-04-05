@@ -8,7 +8,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "watch": "webpack --watch --config ./build/webpack.config.js",
+    "watch": "webpack --watch --config ./build/webpack.dev.config.js",
+    "devbuild": "webpack --config ./build/webpack.dev.config.js",
     "build": "webpack --config ./build/webpack.config.js",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "lint": "eslint --ext .js src test/unit",
@@ -27,7 +28,8 @@
     "jest": "^22.0.4",
     "jsdoc": "^3.5.5",
     "webpack": "^4.4.1",
-    "webpack-cli": "^2.0.13"
+    "webpack-cli": "^2.0.13",
+    "webpack-merge": "^4.1.2"
   },
   "peerDependencies": {
     "@gfloan/app.frontend.web": "^1.0.0"

@@ -85,8 +85,9 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@gfloan/app.frontend.web.core@../app.frontend.web.core":
+"@gfloan/app.frontend.web.core@^0.0.4":
   version "0.0.4"
+  resolved "http://localhost:4873/@gfloan%2fapp.frontend.web.core/-/app.frontend.web.core-0.0.4.tgz#6e3a0551066d730cda707c83483951b7e339c305"
   dependencies:
     axios "^0.18.0"
     vant "^1.0.3"

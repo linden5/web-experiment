@@ -2,9 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import { Button, NavBar, Icon, Toast, Swipe, SwipeItem, Panel, Row, Col, Tabbar, TabbarItem, Tag } from 'vant'
-import Home from '@/components/Home'
-import Entrance from '@/components/Entrance'
+import { Button, NavBar, Icon, Toast, Swipe, SwipeItem, Panel, Row, Col, Tabbar, TabbarItem, Tag, Field, Dialog } from 'vant'
+import Login from '@/components/Login'
 import App from './App'
 
 Vue.use(Button)
@@ -16,9 +15,13 @@ Vue.use(Button)
   .use(Panel)
   .use(Row).use(Col)
   .use(Tabbar).use(TabbarItem)
-  .use(Tag)
+  .use(Tag).use(Field)
 
 Vue.use(VueRouter)
+Vue.prototype.$vant = {
+  Toast,
+  Dialog
+}
 Vue.config.productionTip = false
 
 var router = new VueRouter({
@@ -26,12 +29,7 @@ var router = new VueRouter({
     {
       path: '/',
       name: 'index',
-      component: Home
-    },
-    {
-      path: '/loading',
-      name: 'loading',
-      component: Entrance
+      component: Login
     }
   ]
 })

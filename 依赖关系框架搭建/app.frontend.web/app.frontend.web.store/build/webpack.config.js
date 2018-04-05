@@ -1,14 +1,7 @@
 const path = require('path');
+const merge = require('webpack-merge')
+const devConfig = require('./webpack.dev.config')
 
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, '../dist')
-  },
-  mode: 'production',
-  output: {
-    libraryTarget: "umd",
-    filename: "index.js"
-  }
-};
+module.exports = merge(devConfig, {
+  mode: 'production'
+})

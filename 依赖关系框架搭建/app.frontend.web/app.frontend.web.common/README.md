@@ -1,7 +1,7 @@
-# @gfloan/app.frontend.web.scaffold
+# 公共页子模块
 
-> 首先是从vue-cli webpack模板生成的项目原有的说明
-> A scaffold project based on vue-cli webpack template
+包含400,401,403,404,500,503等错误页面，以及页面底部带有导航栏的页面模板PageFrame。
+PageFrame是为主页Home与理财Finance共用
 
 ## Build Setup
 
