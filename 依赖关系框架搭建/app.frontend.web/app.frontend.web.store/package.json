@@ -1,6 +1,6 @@
 {
   "name": "@gfloan/app.frontend.web.store",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "状态子项目",
   "main": "dist/index.js",
   "repository": "https://github.com/linden5-WebExperiment/app.frontend.web.store.git",
