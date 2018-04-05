@@ -10,6 +10,6 @@
 >   npm i -g webpack-cli
 5.  全局安装gulp-cli
 >   npm i -g gulp-cli
-6.  设置git别名命令cmp
+6.  设置git别名命令cmp(看过提交记录后我发现,yarn publish是会自动提交的)
 >   git config --global alias.cmp '!f() { git add -A && git commit -m "$@" && git push; }; f'
 >   用法：git cmp "提交信息"
