@@ -1,6 +1,6 @@
 {
   "name": "@gfloan/app.frontend.web.components",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "公共组件",
   "author": "liuyunxiang <liuyunxng@qq.com>",
   "main": "dist/index.js",
