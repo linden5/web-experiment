@@ -10,10 +10,13 @@
 
 实际上，我的开发方式是：在web项目中进行npm link
 > yarn run plink
+
 启动webpack-dev-server
 > yarn run dev
+
 去需要开发的子文件夹中执行webpack --watch
 > yarn run watch
+
 如果watch不一定有效(特指router项目，可能是因为配置上还有问题),手动devbuild
 > yarn run devbuild
 
