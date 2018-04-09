@@ -8,16 +8,17 @@
  
 如果使用gulp脚本在所有子模块中执行webpack --watch，在我的机器(window7,4G内存，i3处理器)上体感会非常卡，所以我放弃了这种做法（脚本还是留下了）
 
-实际上，我的开发方式是：在web项目中进行npm link
+实际上，我的开发方式是：
+1. 在web项目中进行npm link
 > yarn run plink
 
-启动webpack-dev-server
+2. 启动webpack-dev-server
 > yarn run dev
 
-去需要开发的子文件夹中执行webpack --watch
+3. 去需要开发的子文件夹中执行webpack --watch
 > yarn run watch
 
-如果watch不一定有效(特指router项目，可能是因为配置上还有问题),手动devbuild
+4. 如果watch不一定有效(特指router项目，可能是因为配置上还有问题),手动devbuild
 > yarn run devbuild
 
 ## 构建命令
