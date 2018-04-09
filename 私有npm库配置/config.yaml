@@ -1,16 +1,21 @@
-# 私有npm库配置
+#
+# This is the default config file. It allows all users to do anything,
+# so don't use it on production systems.
+#
+# Look here for more config file examples:
+# https://github.com/verdaccio/verdaccio/tree/master/conf
+#
 
-verdaccio启动后输出
->  warn --- config file  - C:\Users\lyx\AppData\Roaming\verdaccio\config.yaml
+# path to a directory with all packages
+storage: ./storage
 
->  warn --- http address - http://localhost:4873/ - verdaccio/2.7.4
+auth:
+  htpasswd:
+    file: ./htpasswd
+    # Maximum amount of users allowed to register, defaults to "+inf".
+    # You can set this to -1 to disable registration.
+    #max_users: 1000
 
-## registry设置
-npm 设置registry:
->  npm config set registry http://localhost:4873
-verdaccio的配置文件中增加淘宝镜像的uplink设置，并修改一些配置，如下所示
-
-```
 # a list of other known repositories we can talk to
 uplinks:
   npmjs:
@@ -23,12 +28,12 @@ packages:
     access: $all
     publish: $authenticated
     proxy: taobao
-
+    
   '@gfloan/*':
     # scoped packages
     access: $all
     publish: $authenticated
-    
+
   '**':
     # allow all users (including non-authenticated users) to read and
     # publish all packages
@@ -43,9 +48,9 @@ packages:
 
     # if package is not available locally, proxy requests to 'npmjs' registry
     proxy: taobao
-```
 
-## 发布使用私有库的项目
-1.  添加账号gfloan并登录
-> npm adduser --registry http://localhost:4873
-2.  在项目的package.json中将"private"属性设置为false(对于true的项目如何发布，我还没有仔细研究,应该是我登录用户名不对)
+# log settings
+logs:
+  - {type: stdout, format: pretty, level: http}
+  #- {type: file, path: verdaccio.log, level: info}
+
