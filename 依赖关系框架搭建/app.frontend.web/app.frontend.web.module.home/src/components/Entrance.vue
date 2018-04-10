@@ -2,6 +2,7 @@
   <div class="loading-bg">
       <router-link to="/home" class="loading-skip">跳过</router-link>
       <span class="loading-tip">聚沙成塔</span>
+      <img src="../../../node_modules/@gfloan/app.frontend.web.resource/assets/image/logo.png">
   </div>
 </template>
 <script>
